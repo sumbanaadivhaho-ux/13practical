@@ -15,6 +15,31 @@ public class timeMethods{
          }
    }
 
+   public static int linearSearch(Node[] array, int key){
+      for (int i = 0; i < array.length; i++){
+         if (array[i].key == key){
+            return i;
+         }
+      }
+      return -1;
+   }
+
+   public static int binarySearch(Node[] array, int key){
+      int low = 0;
+      int high = array.length - 1;
+      while (low <= high){
+         int mid = (low + high) / 2;
+         if (array[mid].key == key){
+            return mid;
+         } else if (array[mid].key < key){
+            low = mid + 1;
+         } else {
+            high = mid - 1;
+         }
+      }
+      return -1;
+   }   
+
    public static void main(String args[]){
 
    DecimalFormat twoD = new DecimalFormat("0.00");
