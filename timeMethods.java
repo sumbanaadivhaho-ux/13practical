@@ -28,7 +28,7 @@ double totalTime = 0.0;
 int n = N;
 int repetition;
 
-// linear
+// linear timing
 for (int repetition = 0; repetition < repetitions; repetition++) {
             int key = rand.nextInt(N) + 1; // random key in range
             long start = System.currentTimeMillis();
@@ -59,7 +59,7 @@ for (int repetition = 0; repetition < repetitions; repetition++) {
    System.out.println();
    System.out.println(); 
 
-   // --- Binary search timing ---
+   //  Binary search timing 
         runTime = 0; runTime2 = 0;
         for (int repetition = 0; repetition < repetitions; repetition++) {
             int key = rand.nextInt(N) + 1;
@@ -88,7 +88,29 @@ for (int repetition = 0; repetition < repetitions; repetition++) {
         System.out.println("________________________________________________");
 
    }	
-   } 
+
+   // --- Linear search ---
+    static int linearsearch(int key, int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == key) return i;
+        }
+        return -1; // not found
+    }
+
+    // --- Binary search ---
+    static int binarysearch(int key, int[] arr) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == key) return mid;
+            else if (arr[mid] < key) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1; // not found
+    }
+}
+   
+
 
 static void oneofyourMethods(int n, 
                        yourMethodParameter1,
