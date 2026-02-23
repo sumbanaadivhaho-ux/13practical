@@ -11,9 +11,17 @@ public static int[] data = new int[N];
 
 public static void main(String args[]){
 
+   for (int i = 0; i < N; i++) {
+      data[i] = i + 1;
+   }
+
 DecimalFormat twoD = new DecimalFormat("0.00");
 DecimalFormat fourD = new DecimalFormat("0.0000");
 DecimalFormat fiveD = new DecimalFormat("0.00000");
+
+Random rand = new Random();
+int repitiions = 30;
+
 
 long start, finish;
 double runTime = 0, runTime2 = 0, time;
