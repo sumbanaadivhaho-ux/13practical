@@ -20,29 +20,25 @@ DecimalFormat fourD = new DecimalFormat("0.0000");
 DecimalFormat fiveD = new DecimalFormat("0.00000");
 
 Random rand = new Random();
-int repitiions = 30;
-
+int repetitions = 30;
 
 long start, finish;
 double runTime = 0, runTime2 = 0, time;
 double totalTime = 0.0;
 int n = N;
-int repetition, repetitions = 30;
+int repetition;
 
-   runTime = 0;
-   for(repetition = 0; repetition < repetitions; repetition++) {
-      start = System.currentTimeMillis();
-		
-      // call the procedures to time here:
-      linearsearch (...);
-      binarysearch (...);
-      // Figure out how to alter this guideline here,
-		
-      finish = System.currentTimeMillis();
-			
-      time = (double)(finish - start);
-      runTime += time;
-      runTime2 += (time*time); }
+// linear
+for (int repetition = 0; repetition < repetitions; repetition++) {
+            int key = rand.nextInt(N) + 1; // random key in range
+            long start = System.currentTimeMillis();
+            linearsearch(key, data);
+            long finish = System.currentTimeMillis();
+
+            double time = (double)(finish - start);
+            runTime += time;
+            runTime2 += (time * time);
+        }
 
    double aveRuntime = runTime/repetitions;
    double stdDeviation = 
