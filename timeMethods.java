@@ -1,13 +1,25 @@
 // Code is stored as 13template.java
-import java.lang.Math.*;   import java.io.*;   import java.text.*;
+import java.lang.Math.*;   
+import java.io.*;   
+import java.text.*;
 
 public class timeMethods{
-public static int N = ....;
-public static void main(String args[]){
+   public static int N = 32654;
 
-DecimalFormat twoD = new DecimalFormat("0.00");
-DecimalFormat fourD = new DecimalFormat("0.0000");
-DecimalFormat fiveD = new DecimalFormat("0.00000");
+   public static class Node{
+      int key;
+      String data;
+      Node (int key, String data){
+         this.key = key;
+         this.data = data; 
+         }
+   }
+
+   public static void main(String args[]){
+
+   DecimalFormat twoD = new DecimalFormat("0.00");
+   DecimalFormat fourD = new DecimalFormat("0.0000");
+   DecimalFormat fiveD = new DecimalFormat("0.00000");
 
 long start, finish;
 double runTime = 0, runTime2 = 0, time;
@@ -16,7 +28,7 @@ int n = N;
 int repetition, repetitions = 30;
 
    runTime = 0;
-   for(repetition = 0; repetition < repetitions; repetition++) {
+   for(int repetition = 0; repetition < repetitions; repetition++) {
       start = System.currentTimeMillis();
 		
       // call the procedures to time here:
