@@ -39,6 +39,22 @@ public class timeMethods{
       }
       return -1;
    }   
+   
+public static Node[] loadRecords(String ulysses.numbered) throws IOException {
+    List<Node> list = new ArrayList<>();
+    BufferedReader br = new BufferedReader(new FileReader(ulysses.numbered));
+    String line;
+    while ((line = br.readLine()) != null) {
+       
+        String[] parts = line.split("\\s+", 2);
+        int key = Integer.parseInt(parts[0]);
+        String data = parts[1];
+        list.add(new Node(key, data));
+    }
+    br.close();
+    return list.toArray(new Node[0]);
+}
+
 
    public static void main(String args[]){
 
