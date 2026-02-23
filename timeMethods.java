@@ -1,66 +1,13 @@
 // Code is stored as 13template.java
-import java.lang.Math.*;   
-import java.io.*;   
-import java.text.*;
+import java.lang.Math.*;   import java.io.*;   import java.text.*;
 
 public class timeMethods{
-   public static int N = 32654;
+public static int N = ....;
+public static void main(String args[]){
 
-   public static class Node{
-      int key;
-      String data;
-      Node (int key, String data){
-         this.key = key;
-         this.data = data; 
-         }
-   }
-
-   public static int linearSearch(Node[] array, int key){
-      for (int i = 0; i < array.length; i++){
-         if (array[i].key == key){
-            return i;
-         }
-      }
-      return -1;
-   }
-
-   public static int binarySearch(Node[] array, int key){
-      int low = 0;
-      int high = array.length - 1;
-      while (low <= high){
-         int mid = (low + high) / 2;
-         if (array[mid].key == key){
-            return mid;
-         } else if (array[mid].key < key){
-            low = mid + 1;
-         } else {
-            high = mid - 1;
-         }
-      }
-      return -1;
-   }   
-   
-public static Node[] loadRecords(String ulysses.numbered) throws IOException {
-    List<Node> list = new ArrayList<>();
-    BufferedReader br = new BufferedReader(new FileReader(ulysses.numbered));
-    String line;
-    while ((line = br.readLine()) != null) {
-       
-        String[] parts = line.split("\\s+", 2);
-        int key = Integer.parseInt(parts[0]);
-        String data = parts[1];
-        list.add(new Node(key, data));
-    }
-    br.close();
-    return list.toArray(new Node[0]);
-}
-
-
-   public static void main(String args[]){
-
-   DecimalFormat twoD = new DecimalFormat("0.00");
-   DecimalFormat fourD = new DecimalFormat("0.0000");
-   DecimalFormat fiveD = new DecimalFormat("0.00000");
+DecimalFormat twoD = new DecimalFormat("0.00");
+DecimalFormat fourD = new DecimalFormat("0.0000");
+DecimalFormat fiveD = new DecimalFormat("0.00000");
 
 long start, finish;
 double runTime = 0, runTime2 = 0, time;
@@ -69,7 +16,7 @@ int n = N;
 int repetition, repetitions = 30;
 
    runTime = 0;
-   for(int repetition = 0; repetition < repetitions; repetition++) {
+   for(repetition = 0; repetition < repetitions; repetition++) {
       start = System.currentTimeMillis();
 		
       // call the procedures to time here:
